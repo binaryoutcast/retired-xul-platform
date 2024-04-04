@@ -1,39 +1,24 @@
-# Unified XUL Platform (UXP)
+# Retired XUL Platform (RXP)
 
-This repository holds the code for a unified application platform for XUL-based
-applications. It is a hard fork from the Mozilla code repository (mozilla-central)
-with an ESR-52 fork point.
+This repository holds the code for a retired (from our perspective, obviously it persists at upstream) application platform for XUL-based
+applications. 
 
-In addition to further development based on the Mozilla upstream code, and
-selective cherry-picking of directly-applicable patches, this repository has its
-own development and holds the base for a maintained platform to be used by XUL
-applications.
+# Why?
 
-## Additional documentation
+Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator (which remains vaporware btw, it has never been released) remains the most popular BinOC Project ever with a tangibly existing downstream ecosystem. Also, people seemed to like Interlink as well. Well now YOU can build em and give em a future in part or in full, sans branding of course. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
 
-Additional documentation relevant to this source code can be found in the `/docs`
-directory. This will contain relevant documentation regarding contributing,
-using and distributing this code and its binaries.
+# Should I be using it?
 
-If you are interested in the development and building side of things, some
-information will be available on the [Pale Moon developer site](http://developer.palemoon.org).
-You are also always welcome to get in touch with our community on the [Pale Moon forum](https://forum.palemoon.org/).
+Maybe, it depends. Perhaps you should check out thereisonlyxul.org before making that decision. There are quite a number of UXP applications there already.
 
-### A note about trademarks and branding
+# Isn't this all old and insecure
 
-Although this repository is primarily licensed under Mozilla Public License v2.0, the
-trademarks and brands contained herein remain the property of their respective
-owners. For more details, please see the notifications in the respective directories.
+Only as old and insecure as the Unified XUL Platform, and that IS properly security patched. If those patches are in this tree when you build? It's likely secure enough but this is why it depends ;)
 
-### Foundation and maintainership
+# But I want old stuff on even older stuff like XP?
 
-This repository has been founded by Moonchild (M.C. Straver) and is maintained by him
-and other community members.
-If you fork this repository to perform your own work on it, please consider offering
-improvement patches upstream to its origin to mutually improve the platform and build
-a future for XUL.
+Then get to it. I'd consider a branch for a legit effort but I'd only be doing overview and seeing if it breaks levels of testing, when I get around to it. So if you bust the tree, you have to fix it. Same goes for other os as well. Other than Windows and Linux that is.
 
-## Looking for Pale Moon?
-As of [`Issue #969`](https://repo.palemoon.org/MoonchildProductions/UXP/issues/969), release version `28.9.0`,
-applications have been split off into their own dedicated (front-end) repositories, with Pale Moon located at
-[`MoonchildProductions/Pale-Moon`](https://repo.palemoon.org/MoonchildProductions/Pale-Moon).
+# How do I build it cause you aren't doing exactly what *they* do?
+
+All in good time. My spare time. See: https://github.com/binaryoutcast/markIII-dev for the FUTURE!
