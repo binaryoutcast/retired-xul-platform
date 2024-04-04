@@ -8,7 +8,7 @@ with Files('*'):
 
 include('sources.mozbuild')
 
-if CONFIG['VPX_USE_YASM']:
+if CONFIG['VPX_USE_YASM'] and CONFIG['COMPILE_ENVIRONMENT']:
     USE_YASM = True
 
 # Linux, Mac and Win share file lists for x86* but not configurations.
