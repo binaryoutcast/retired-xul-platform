@@ -402,22 +402,10 @@ def get_vc_paths(topsrcdir):
         encoding = 'mbcs' if sys.platform == 'win32' else 'utf-8'
         return json.loads(subprocess.check_output([os.path.join(topsrcdir, 'build/win32/vswhere.exe'), '-format', 'json'] + args).decode(encoding, 'replace'))
 
-    # Can't pass -requires with -legacy, so query each separately.
-    # Legacy versions first (VS2015)
-    for install in vswhere(['-legacy', '-version', '[14.0,15.0)']):
-        version = Version(install['installationVersion'])
-        # Skip anything older than VS2015.
-        if version < '14':
-            continue
-        path = install['installationPath']
-
-        yield (Version(install['installationVersion']), {
-            'x64': [os.path.join(path, r'VC\bin\amd64')],
-            # The x64->x86 cross toolchain requires DLLs from the native x64 toolchain.
-            'x86': [os.path.join(path, r'VC\bin\amd64_x86'), os.path.join (path, r'VC\bin\amd64')],
-        })
-    # Then VS2017 and newer.
-    for install in vswhere(['-requires', 'Microsoft.VisualStudio.Component.VC.Tools.x86.x64']):
+    for install in vswhere(['-latest', '-products', '*',
+                            '-requires', 'Microsoft.VisualStudio.Component.VC.Tools.x86.x64',
+                            '-requires', 'Microsoft.VisualStudio.Component.VC.ATL',
+                            '-requires', 'Microsoft.VisualStudio.Component.VC.ATLMFC']):
         path = install['installationPath']
         tools_version = open(os.path.join(path, r'VC\Auxiliary\Build\Microsoft.VCToolsVersion.default.txt'), 'rb').read().strip()
         tools_path = os.path.join(path, r'VC\Tools\MSVC', tools_version, r'bin\HostX64')
