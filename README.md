@@ -11,7 +11,7 @@ Reference, example, shuffleboard, accessing an old profile, tinkering on things 
 
 Maybe, it depends. Perhaps you should check out thereisonlyxul.org before making that decision. There are quite a number of UXP applications there already.
 
-## Isn't this all old and insecure
+## Isn't this all old and insecure?
 
 Only as old and insecure as the Unified XUL Platform, and that IS properly security patched. If those patches are in this tree when you build? It's likely secure enough but this is why it depends ;)
 
