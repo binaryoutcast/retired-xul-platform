@@ -13,8 +13,8 @@ endif # GREPKGR_BASE_MK_INCLUDED
 # ---------------------------------------------------------------------------------------------------------------------
 
 # These vars are here so that if paths change the number of places that need to be changed is minimal.
-MOZINST_PATH := $(MOZILLA_DIR)/runtime/packager
-GREPKGR_PATH := $(MOZILLA_DIR)/runtime/packager
+MOZINST_PATH := $(MOZILLA_DIR)/aura/packager
+GREPKGR_PATH := $(MOZILLA_DIR)/aura/packager
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -220,7 +220,7 @@ ifdef MAKENSISU
 DEFINES += -DHAVE_MAKENSISU=1
 CONFIG_DIR = instgen
 ifndef SFX_MODULE
-SFX_MODULE = $(MOZILLA_SRCDIR)/other-licenses/7zstub/default/7zSD.sfx
+SFX_MODULE = $(MOZILLA_DIR)/other-licenses/7zstub/default/7zSD.sfx
 endif # SFX_MODULE
 endif # MAKENSISU
 

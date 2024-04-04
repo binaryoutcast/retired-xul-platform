@@ -96,7 +96,7 @@ endif
 update: $(call mkdir_deps,$(ABS_DIST)/$(PKG_STAGE_DIR))
 	@echo 'Creating update mar (xz compressed)...'
 	MAR=$(DIST)/host/bin/mar$(HOST_BIN_SUFFIX) \
-	  $(MOZILLA_DIR)/runtime/packager/make-update.sh \
+	  $(MOZILLA_DIR)/aura/packager/make-update.sh \
 	  '$(DIST)/$(PKG_UPDATE_FILENAME)' '$(DIST)/$(PKG_STAGE_DIR)'
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ update: $(call mkdir_deps,$(ABS_DIST)/$(PKG_STAGE_DIR))
 update-bz2: $(call mkdir_deps,$(ABS_DIST)/$(PKG_STAGE_DIR))
 	@echo 'Creating update mar (bz2 compressed)...'
 	MAR_OLD_FORMAT=1 MAR=$(DIST)/host/bin/mar$(HOST_BIN_SUFFIX) \
-	  $(MOZILLA_DIR)/runtime/packager/make-update.sh \
+	  $(MOZILLA_DIR)/aura/packager/make-update.sh \
 	  '$(DIST)/$(PKG_BASENAME).complete.mar' '$(DIST)/$(PKG_STAGE_DIR)'
 
 # ---------------------------------------------------------------------------------------------------------------------

@@ -11,8 +11,8 @@ MOZ_PKG_REMOVALS = $(srcdir)/removed-files.in
 NO_PKG_DEFAULT_FILES = 1
 NON_OMNIJAR_FILES = defaults/profile/panels.rdf
 
-include $(MOZILLA_SRCDIR)/aura/packager/base.mk
-include $(MOZILLA_SRCDIR)/aura/packager/packager.mk
+include $(MOZILLA_DIR)/aura/packager/base.mk
+include $(MOZILLA_DIR)/aura/packager/packager.mk
 
 ifeq ($(OS_ARCH),WINNT)
 ifdef MAKENSISU
@@ -35,11 +35,11 @@ BRANDING_FILES += \
 
 $(CONFIG_DIR)/setup.exe::
 	$(PYTHON) $(MOZINST_PATH)/nsis/preprocess-locale.py \
-	  --preprocess-locale $(MOZILLA_SRCDIR) \
-	  $(topsrcdir)/aura/xpapps/navigator/installer/locale $(AB_CD) $(CONFIG_DIR)
+	  --preprocess-locale $(MOZILLA_DIR) \
+	  $(topsrcdir)/aura/navigator/installer/locale $(AB_CD) $(CONFIG_DIR)
 	$(PYTHON) $(MOZINST_PATH)/nsis/preprocess-locale.py \
 	  --convert-utf8-utf16le $(DIST)/branding/license.txt $(CONFIG_DIR)/license.txt
 
-include $(MOZILLA_SRCDIR)/aura/packager/installer.mk
+include $(MOZILLA_DIR)/aura/packager/installer.mk
 endif # MAKENSISU
 endif

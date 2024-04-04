@@ -75,7 +75,7 @@ uninstaller::
 	$(call py_action,preprocessor,-Fsubstitution $(DEFINES) $(ACDEFINES) \
 	  $(srcdir)/src/defines.nsi.in -o $(CONFIG_DIR)/defines.nsi)
 	$(PYTHON) $(MOZINST_PATH)/nsis/preprocess-locale.py --preprocess-locale \
-		$(MOZILLA_SRCDIR) $(abspath $(srcdir))/locale $(AB_CD) $(CONFIG_DIR)
+		$(MOZILLA_DIR) $(abspath $(srcdir))/locale $(AB_CD) $(CONFIG_DIR)
 	$(NSINSTALL) -D $(DIST)/bin/uninstall
 	cd $(CONFIG_DIR) && $(MAKENSISU) uninstaller.nsi
 	cp $(CONFIG_DIR)/helper.exe $(DIST)/bin/uninstall
