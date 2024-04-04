@@ -5,7 +5,7 @@ applications.
 
 ## Why?
 
-Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator is not only the most popular BinOC Project, it is also vaporware since it has never been released with a tangibly existing downstream ecosystem, which seems impossible. Also, people seemed to like Interlink too. Well now YOU can build 'em and give them a future in part or in full, sans branding of course. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
+Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator which is not only the most popular BinOC Project despite being vaporware (since it has never been released) AND has a tangibly existing downstream ecosystem, which seems impossible. Also, people seemed to like Interlink too. Well now YOU can build 'em and give them a future in part or in full, sans branding of course. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
 
 ## Should I be using it?
 
