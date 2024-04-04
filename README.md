@@ -11,7 +11,7 @@ Well now YOU can build 'em and give them a future in part or in full, sans brand
 
 ## Should I be using it?
 
-Maybe, it depends. Perhaps you should check out thereisonlyxul.org before making that decision. There are quite a number of UXP applications there already.
+Maybe, it depends. Perhaps you should check out https://thereisonlyxul.org/ before making that decision. There are quite a number of UXP applications there already.
 
 ## Isn't this all old and insecure?
 
