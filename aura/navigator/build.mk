@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-MAKE_INSTALLER_TARGET = $(MAKE) -C runtime/xpapps/navigator/installer
+MAKE_INSTALLER_TARGET = $(MAKE) -C aura/navigator/installer
 
 installer:
 	@$(MAKE_INSTALLER_TARGET) $@

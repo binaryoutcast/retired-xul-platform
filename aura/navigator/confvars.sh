@@ -10,8 +10,8 @@ MOZ_APP_DISPLAYNAME=Mariner
 MOZ_SUITE=1
 BINOC_BOREALIS=1
 BINOC_NAVIGATOR=1
-MOZ_BRANDING_DIRECTORY=runtime/xpapps/navigator/branding
-MOZ_OFFICIAL_BRANDING_DIRECTORY=other-licenses/branding/binoc/mariner/release
+MOZ_BRANDING_DIRECTORY=aura/navigator/branding
+MOZ_OFFICIAL_BRANDING_DIRECTORY=aura/other-licenses/branding/mariner
 MOZ_EXTENSIONS_DEFAULT=" gio"
 MOZ_UPDATER=1
 # This should usually be the same as the value MAR_CHANNEL_ID.
@@ -21,7 +21,7 @@ ACCEPTED_MAR_CHANNEL_IDS=release
 # The MAR_CHANNEL_ID must not contain the following 3 characters: ",\t "
 MAR_CHANNEL_ID=release
 
-MOZ_APP_VERSION=`$PYTHON ${_topsrcdir}/runtime/build/version2k.py --version ${_topsrcdir}/runtime/xpapps/navigator/config/version.txt`
+MOZ_APP_VERSION=`$PYTHON ${_topsrcdir}/aura/build/version2k.py --version ${_topsrcdir}/aura/navigator/config/version.txt`
 MOZ_APP_VERSION_DISPLAY=$MOZ_APP_VERSION
 
 # MOZ_APP_ID={a3210b97-8e8a-4737-9aa0-aa0e607640b9}
