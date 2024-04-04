@@ -19,7 +19,7 @@ Only as old and insecure as the Unified XUL Platform, and that IS properly secur
 
 ## But I want old stuff on even older stuff like XP?
 
-Then get to it. I'd consider a branch for a legit effort but I'd only be doing overview and seeing if it breaks levels of testing, when I get around to it. So if you bust the tree, you have to fix it. Same goes for other os as well. Other than Windows and Linux that is.
+That isn't a question. Still, you best get to it. I'd totally consider a non-blocking branch for a legit effort but I'd only be doing overseeing and occasional testing, when I get around to it. So if you bust the tree, you have to fix it. Same goes for other os as well. Other than Windows and Linux that is.
 
 ## How do I build it cause you aren't doing exactly what *they* do?
 
