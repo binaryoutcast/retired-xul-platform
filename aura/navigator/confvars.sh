@@ -3,15 +3,15 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-MOZ_APP_BASENAME=Mariner
+MOZ_APP_BASENAME=Borealis
 MOZ_APP_VENDOR=BinOC
-MOZ_APP_NAME=mariner
-MOZ_APP_DISPLAYNAME=Mariner
+MOZ_APP_NAME=borealis
+MOZ_APP_DISPLAYNAME=Borealis
 MOZ_SUITE=1
 BINOC_BOREALIS=1
 BINOC_NAVIGATOR=1
 MOZ_BRANDING_DIRECTORY=aura/navigator/branding
-MOZ_OFFICIAL_BRANDING_DIRECTORY=aura/other-licenses/branding/mariner
+MOZ_OFFICIAL_BRANDING_DIRECTORY=aura/other-licenses/branding/borealis
 MOZ_EXTENSIONS_DEFAULT=" gio"
 MOZ_UPDATER=1
 # This should usually be the same as the value MAR_CHANNEL_ID.
