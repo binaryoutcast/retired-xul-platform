@@ -53,6 +53,7 @@ LOCAL_INCLUDES += [
     '/mailnews/imap/src',
     '/mailnews/intl',
     '/mailnews/local/src',
+    '/mailnews/mapi/include',
     '/mailnews/mime/emitters',
     '/mailnews/mime/src',
     '/mailnews/news/src',
