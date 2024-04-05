@@ -13,6 +13,7 @@ this.EXPORTED_SYMBOLS = [];
 Cu.import("resource://gre/modules/AddonManager.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
 
+const PREF_PLUGINS_DISABLED  = "plugin.disable";
 const URI_EXTENSION_STRINGS  = "chrome://mozapps/locale/extensions/extensions.properties";
 const STRING_TYPE_NAME       = "type.%ID%.name";
 const LIST_UPDATED_TOPIC     = "plugins-list-updated";
@@ -587,9 +588,24 @@ PluginWrapper.prototype = {
   }
 };
 
-AddonManagerPrivate.registerProvider(PluginProvider, [
-  new AddonManagerPrivate.AddonType("plugin", URI_EXTENSION_STRINGS,
-                                    STRING_TYPE_NAME,
-                                    AddonManager.VIEW_TYPE_LIST, 6000,
-                                    AddonManager.TYPE_SUPPORTS_ASK_TO_ACTIVATE)
-]);
+// XXXTobin: Figure out if globally disabled plugins can be re-enabled at runtime
+// and if so find a dynamic solution for registering and deregistering providers.
+if (Services.prefs.getBoolPref(PREF_PLUGINS_DISABLED, true)) {
+  // For now just register a fake provider on startup and then
+  // unregister it when plugins are globally disabled.
+  var DisabledPluginProvider = {
+    get name() "PluginProvider",
+    startup: function PL_startup() { },
+    shutdown: function PL_shutdown() { }
+  };
+
+  AddonManagerPrivate.registerProvider(DisabledPluginProvider);
+  AddonManagerPrivate.unregisterProvider(DisabledPluginProvider);
+} else {
+  AddonManagerPrivate.registerProvider(PluginProvider, [
+    new AddonManagerPrivate.AddonType("plugin", URI_EXTENSION_STRINGS,
+                                      STRING_TYPE_NAME,
+                                      AddonManager.VIEW_TYPE_LIST, 6000,
+                                      AddonManager.TYPE_SUPPORTS_ASK_TO_ACTIVATE)
+  ]);
+}
