@@ -66,6 +66,7 @@ _BINOC_OPTZ=
 ```
 
 `./mach build`
+
 `./mach package` on Linux or `./mach installer` on Windows
 
 Additionally, one can do `./mach install` even on windows with the never-broken gre-packaging I created out of the much larger and overly complex out of date mozilla packaging.
