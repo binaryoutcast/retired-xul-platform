@@ -1,0 +1,115 @@
+# =====================================================================================================================
+
+# Get Target OS and the Config Guess value from bash-mach
+_TARGET_OS=$XMACH_TARGET_OS
+_CONFIG_GUESS=@CONFIG_GUESS@
+
+# Construct the path for the objdir
+_OBJDIR=$_OBJDIR_PREFIX/$_APP-$_CONFIG_GUESS
+
+# This sets basic per-targetos options
+if [ "$_TARGET_OS" == "winnt" ]; then
+  _OPTZ="-O2 -GS-"
+
+  if [ -n "$_X64" ]; then
+    _OPTZ="${_OPTZ} -favor:AMD64 -fp:precise -Qfast_transcendentals -Qpar"
+
+    if [ -n "$_BINOC_OPTZ" ]; then
+      _OPTZ="${_OPTZ} -GLTs -arch:AVX2"
+    fi
+
+    ac_add_options --target=x86_64-pc-mingw32
+    ac_add_options --host=x86_64-pc-mingw32
+
+    #WIN32_REDIST_DIR=$VCINSTALLDIR/redist/x64/Microsoft.VC140.CRT
+    #WIN_UCRT_REDIST_DIR=$UNIVERSALCRTSDKDIR/Redist/$WINDOWSSDKVERSION/ucrt/DLLs/x64
+  else
+    echo "No Redist"
+    #WIN32_REDIST_DIR=$VCINSTALLDIR/redist/x86/Microsoft.VC140.CRT
+    #WIN_UCRT_REDIST_DIR=$UNIVERSALCRTSDKDIR/Redist/$WINDOWSSDKVERSION/ucrt/DLLs/x86
+  fi
+else
+  _OPTZ="-O2 -msse2 -mfpmath=sse -w"
+  _OBJDIR=$_OBJDIR-gtk$_GTK
+
+  ac_add_options --with-pthreads
+  ac_add_options --enable-default-toolkit=cairo-gtk$_GTK
+
+  if [ -n "$_X64" ]; then
+    ac_add_options --x-libraries=/usr/lib64
+  else
+    ac_add_options --x-libraries=/usr/lib
+  fi
+
+  export MOZ_PKG_SPECIAL=gtk$_GTK_VERSION
+fi
+
+if [ "$_APP" != "js" ]; then
+  _APP=aura/$_APP
+fi
+
+if [ -n "$_DEBUG" ]; then
+  ac_add_options --enable-debug
+else
+  ac_add_options --disable-debug
+fi
+
+# =====================================================================================================================
+
+# Standard mozconfig options
+mk_add_options AUTOCLOBBER=1
+mk_add_options MOZ_MAKE_FLAGS="-j${_CORES}"
+mk_add_options MOZ_OBJDIR=$_OBJDIR
+ac_add_options --enable-application=$_APP
+ac_add_options --enable-optimize="${_OPTZ}"
+ac_add_options --enable-official-vendor
+ac_add_options --enable-jemalloc
+ac_add_options --enable-strip
+ac_add_options --enable-av1
+ac_add_options --disable-tests
+ac_add_options --disable-necko-wifi
+ac_add_options --disable-parental-controls
+ac_add_options --disable-startupcache
+ac_add_options --disable-precompiled-startupcache
+ac_add_options --disable-jxl
+ac_add_options --enable-chrome-format=omni
+ac_add_options --enable-chrome-compression=none
+
+export MOZILLA_OFFICIAL=1
+
+# =====================================================================================================================
+
+# Handle application branding if not JS
+if [ -n "$_BRANDING" ] && [ "$_APP" != "js" ]; then
+  if [ "$_BRANDING" == "release" ]; then
+    ac_add_options --enable-official-branding
+  fi
+fi
+
+# Handle application updater and update channel
+if [ -n "$_UPDATER" ] && [ "$_APP" != "js" ]; then
+  ac_add_options --enable-updater
+  if [ -n "$_BRANDING" ]; then
+    ac_add_options --enable-update-channel=$_BRANDING
+  fi
+else
+  ac_add_options --disable-updater
+fi
+
+# =====================================================================================================================
+
+# Unset our vars as to not pollute the build env
+unset _APP
+unset _BRANDING
+unset _UPDATER
+unset _GTK
+unset _CORES
+unset _X64
+unset _OBJDIR_PREFIX
+unset _BINOC_OPTZ
+unset _TARGET_OS
+unset _CONFIG_GUESS
+unset _OBJDIR
+unset _OPTZ
+
+# =====================================================================================================================
