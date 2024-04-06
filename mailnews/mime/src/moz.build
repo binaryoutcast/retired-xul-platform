@@ -70,8 +70,9 @@ SOURCES += [
 ]
 
 LOCAL_INCLUDES += [
-     '/security/certverifier',
-     '/security/manager/ssl',
+     '/system/security/certverifier',
+     '/system/security/manager/ssl',
+     '/system/security/pkix/include',
 ]
 
 EXTRA_COMPONENTS += [

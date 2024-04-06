@@ -9,7 +9,7 @@
 #include "prmem.h"
 #include "nsMsgSend.h"
 #include "nsIIOService.h"
-#include "nsIXULAppInfo.h"
+#include "nsIHttpProtocolHandler.h"
 #include "nsMailHeaders.h"
 #include "nsMsgI18N.h"
 #include "nsINntpService.h"
@@ -357,21 +357,14 @@ nsresult mime_generate_headers(nsIMsgCompFields *fields,
     finalHeaders->SetRawHeader(HEADER_X_MOZILLA_DRAFT_INFO, draftInfo, nullptr);
   }
 
-    nsCOMPtr<nsIXULAppInfo> appInfo = do_GetService("@mozilla.org/xre/app-info;1");
-    if (appInfo) {
-      nsAutoCString userAgentString;
-      nsAutoCString userAgentName;
-      nsAutoCString userAgentVersion;
-      appInfo->GetName(userAgentName);
-      appInfo->GetVersion(userAgentVersion);
-      if (!userAgentName.IsEmpty() && !userAgentVersion.IsEmpty()) {
-        userAgentString += userAgentName;
-        userAgentString += '/';
-        userAgentString += userAgentVersion;
-      }
+  nsCOMPtr<nsIHttpProtocolHandler> pHTTPHandler = do_GetService(NS_NETWORK_PROTOCOL_CONTRACTID_PREFIX "http", &rv);
+  if (NS_SUCCEEDED(rv) && pHTTPHandler)
+  {
+    nsAutoCString userAgentString;
+    pHTTPHandler->GetUserAgent(userAgentString);
 
     if (!userAgentString.IsEmpty())
-      finalHeaders->SetUnstructuredHeader("X-Mailer",
+      finalHeaders->SetUnstructuredHeader("User-Agent",
         NS_ConvertUTF8toUTF16(userAgentString));
   }
 
