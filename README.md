@@ -1,13 +1,12 @@
 # Retired XUL Platform (RXP)
 
-This repository holds the code for a retired (from our perspective, obviously it persists at upstream) application platform for XUL-based
-applications. 
+This repository holds the code for a lightly modified application platform for retired BinOC XUL-based applications. The modifications to the platform herein open it to alt configurations and improve the quality of life aesthetically and functionally where possible.
 
 ## Why?
 
 Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator which is not only the most popular BinOC Project despite being vaporware (since it has never been released) but also somehow has a tangibly existing downstream ecosystem, which seems impossible. Also, people seemed to like Interlink too.
 
-Well now YOU can build 'em and give them a future in part or in full, sans branding of course if you distribute. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
+Well now YOU can build 'em and give them a future in part or in full for yourself or others, sans branding, of course, if you distribute. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
 
 ## Should I be using it?
 
