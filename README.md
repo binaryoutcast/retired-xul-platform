@@ -23,4 +23,53 @@ That isn't a question. Still, you best get to it. I'd totally consider a non-blo
 
 ## How do I build it cause you aren't doing exactly what *they* do?
 
-All in good time. My spare time. See: https://github.com/binaryoutcast/markIII-dev for the FUTURE!
+### Dependancies
+
+- Same as the Unified XUL Platform, see Windows and Linux build instructions on [DPMO](https://developer.palemoon.org/build/).
+- Proper build instructions along with a modified windows build toolchain will follow soonish. Linux should have no difficulties.
+
+### mozconfig
+
+Now you have the same power I did when I was producing these applications, and testing other UXP projects. The Binary Outcast Super Mozilla Configuration File! Just set a few simple variables or tell it to go away and use your own full configuration. The choice is yours!
+
+```
+# Application to build
+_APP=navigator
+
+# Branding to use (if not specified in the logic of this mozconfig it will be app/branding/branddir
+_BRANDING=release
+
+# Enable the updater
+_UPDATER=
+
+# Enable Debugging (There are remaining asserts that may insta-crash)
+_DEBUG=
+
+# Number of processes to spawn when compiling. BinOC normally has number of cores (or threads) minus two
+_CORES=10
+
+# 64-bit target
+_X64=1
+
+# GTK Version (2 or 3)
+_GTK=2
+
+# This is the prefix of where you want object directories stored. BinOC uses ../.obj
+_OBJDIR_PREFIX=../.obj
+
+# This enables extended optimization flags used by BinOC Internally.
+_BINOC_OPTZ=
+
+# =====================================================================================================================
+
+. ./aura/config/binoc.inc.mozconfig
+```
+
+`./mach build`
+`./mach package` on Linux or `./mach installer` on Windows
+
+Additionally, one can do `./mach install` even on windows with the never-broken gre-packaging I created out of the much larger and overly complex out of date mozilla packaging.
+
+## Tired of this crap? See:
+
+https://github.com/binaryoutcast/markIII-dev for the FUTURE!
