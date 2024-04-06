@@ -1,5 +1,7 @@
 # Retired XUL Platform (RXP)
 
+![image](https://github.com/binaryoutcast/retired-xul-platform/assets/3889475/d2f2e2ea-dac6-4b32-82c5-fd716a826b75)
+
 This repository holds the code for a lightly modified incarnation of the [Unified XUL Platform](https://repo.palemoon.org/MoonchildProductions/UXP) adapted for retired BinOC XUL Apps. The modifications to the platform herein also open it to alt configurations and improve the quality of life aesthetically and functionally where possible.
 
 ## Why?
