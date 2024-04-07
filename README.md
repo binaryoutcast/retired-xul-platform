@@ -4,6 +4,9 @@
 
 This repository holds the code for a lightly modified incarnation of the [Unified XUL Platform](https://repo.palemoon.org/MoonchildProductions/UXP) adapted for retired BinOC XUL Apps. The modifications to the platform herein also open it to alt configurations and improve the quality of life aesthetically and functionally where possible.
 
+![image](https://github.com/binaryoutcast/retired-xul-platform/assets/3889475/422e3e8a-6b43-4aea-ae24-6b5ecfc957f8)
+
+
 ## Why?
 
 Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator which is not only the most popular BinOC Project despite being vaporware (since it has never been released) but also somehow has a tangibly existing downstream ecosystem, which seems impossible. Also, people seemed to like Interlink too.
