@@ -72,6 +72,8 @@ _BINOC_OPTZ=
 
 Additionally, one can do `./mach install` even on windows with the never-broken gre-packaging I created out of the much larger and overly complex out of date mozilla packaging.
 
+![image](https://github.com/binaryoutcast/retired-xul-platform/assets/3889475/422e3e8a-6b43-4aea-ae24-6b5ecfc957f8)
+
 ## Tired of XUL already?
 
  See https://github.com/binaryoutcast/markIII-dev for the FUTURE!
