@@ -11,7 +11,7 @@ MOZ_SUITE=1
 BINOC_BOREALIS=1
 BINOC_NAVIGATOR=1
 MOZ_BRANDING_DIRECTORY=aura/navigator/branding
-MOZ_OFFICIAL_BRANDING_DIRECTORY=aura/other-licenses/branding/borealis
+MOZ_OFFICIAL_BRANDING_DIRECTORY=aura/other-licenses/branding/borealis-uxp
 MOZ_EXTENSIONS_DEFAULT=" gio"
 MOZ_UPDATER=1
 # This should usually be the same as the value MAR_CHANNEL_ID.
