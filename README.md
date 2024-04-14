@@ -27,7 +27,7 @@ That isn't a question. Still, you best get to it. I'd totally consider a non-blo
 ### Dependancies
 
 - Same as the Unified XUL Platform, see Windows and Linux build instructions on [DPMO](https://developer.palemoon.org/build/).
-- Proper build instructions along with a modified windows build toolchain will follow soonish. Linux should have no difficulties.
+- https://github.com/binaryoutcast/retired-xul-platform/releases/tag/AURABUILD_5.1.0a2 (download the attached 7zip archive) for builds on Windows instead of MozillaBuild 3.4.
 
 ### mozconfig
 
