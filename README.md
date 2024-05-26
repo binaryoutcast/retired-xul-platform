@@ -8,19 +8,15 @@ This repository holds the code for a lightly modified incarnation of the [Unifie
 
 Reference, example, shuffleboard, accessing an old profile, tinkering on things like the Borealis Navigator which is not only the most popular BinOC Project despite being vaporware (since it has never been released) but also somehow has a tangibly existing downstream ecosystem, which seems impossible. Also, people seemed to like Interlink too.
 
-Well now YOU can build 'em and give them a future in part or in full for yourself or others, sans branding, of course, if you distribute. Though, I may be persuaded by passion, commitment, and good old fasioned American dollars to part with my beloved brands. Inquire if you care unless you don't.
-
 ## Should I be using it?
 
 Maybe, it depends. Perhaps you should check out https://thereisonlyxul.org/ before making that decision. There are quite a number of UXP applications there already.
 
+But if none of those meet your requirements then try your hand at building your self your own DIY release of this incomplete xul software.
+
 ## Isn't this all old and insecure?
 
-Only as old and insecure as the Unified XUL Platform, and that IS properly security patched. If those patches are in this tree when you build? It's likely secure enough but this is why it depends ;)
-
-## But I want old stuff on even older stuff like XP?
-
-That isn't a question. Still, you best get to it. I'd totally consider a non-blocking branch for a legit effort but I'd only be doing overseeing and occasional testing, when I get around to it. So if you bust the tree, you have to fix it. Same goes for other os as well. Other than Windows and Linux that is.
+Only as old and insecure as the Unified XUL Platform, and that IS properly security patched. If those patches are in this tree when you build? It's likely secure enough but this is another reason why it depends ;)
 
 ## How do I build it cause you aren't doing exactly what *they* do?
 
