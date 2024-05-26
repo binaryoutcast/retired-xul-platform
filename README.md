@@ -27,8 +27,6 @@ Only as old and insecure as the Unified XUL Platform, and that IS properly secur
 
 ### mozconfig
 
-Now you have the same power I did when I was producing these applications and testing other UXP projects. Next is the Binary Outcast Super Mozilla Configuration File! Just set a few simple variables or tell it to go away and use your own full configuration. The choice is yours! The complicated bits are in `./aura/config/binoc.inc.mozconfig` if you are interested.
-
 ```
 # Application to build
 _APP=navigator
